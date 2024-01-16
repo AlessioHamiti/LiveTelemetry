@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+  lt_client:
+    build:
+      context: LiveTelemetry_client
+    ports:
+      - "3001:3001"
+    networks:
+      - mynetwork
+
+  lt_server:
+    build:
+      context: LiveTelemetry_server
+    ports:
+      - "3002:3002"
+    networks:
+      - mynetwork
+
+  mysql:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: liveTelemetry_db
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - "3306:3306"
+    networks:
+      - mynetwork
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    restart: always
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - "8080:80"
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:

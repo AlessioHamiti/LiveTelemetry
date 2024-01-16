@@ -1,0 +1,13 @@
+{
+    "server":{
+        "hostname": "lt_server",
+        "port": "8800"
+    },
+    "db": {
+        "user": "root",
+        "host": "mysql",  
+        "port": "3306",
+        "password": "SkillIsse!2023",
+        "database": "liveTelemetry_db"
+    }
+}

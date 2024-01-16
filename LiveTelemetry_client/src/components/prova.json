@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "title": "SOC",
+      "value": "58%"
+    },
+    {
+      "title": "Cell Max Temp",
+      "value": "45 °C"
+    },
+    {
+      "title": "Motor Max Temp",
+      "value": "60 °C"
+    },
+    {
+      "title": "Speed",
+      "value": "35 km/h"
+    },
+    {
+      "title": "Traction Control Factor",
+      "value": "1.2"
+    },
+    {
+      "title": "Torque Vectoring Factor",
+      "value": "1.2"
+    },
+    {
+      "title": "GPS State (NO)",
+      "value": "1"
+    },
+    {
+      "title": "VCU State(NO)",
+      "value": "8"
+    }
+  ]
+}

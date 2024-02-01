@@ -31,7 +31,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "docker": "docker run -d -it --rm -p 3001:3001 --name lt_client_development $(docker build -q -f Dockerfile -t live_telemetry_client:1 .)"
+    "docker": "docker run -d -it --rm -p 3001:3001 --name lt_client_development $(docker build -q -f Dockerfile.dev -t live_telemetry_client:1 .)"
   },
   "eslintConfig": {
     "extends": [

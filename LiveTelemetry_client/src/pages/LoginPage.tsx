@@ -22,9 +22,8 @@ const LoginPage: React.FC = () => {
   const [errorText, setErrorText] = useState('');
 
   const handleLogin = () => {
-    console.log("accesso handle login")
     try {
-      Axios.get('http://lt_server:8800/checkLogin', { params: { usr: username, psw: password,} })
+      Axios.get('http://localhost:3002/checkLogin', { params: { usr: username, psw: password,} })
       .then(response => {
         if(response.data === "OK"){
           navigate('/dashboard');

@@ -2,18 +2,20 @@ version: '3'
 
 services:
   lt_client:
-    build:
-      context: LiveTelemetry_client
+    build: ./LiveTelemetry_client
+    container_name: lt_client
     ports:
-      - "3001:3001"
+      - '3000:3000'
     networks:
       - mynetwork
 
   lt_server:
-    build:
-      context: LiveTelemetry_server
+    build: ./LiveTelemetry_server
+    container_name: lt_server
     ports:
-      - "3002:3002"
+      - '3002:3002'
+    stdin_open: true
+    tty: true
     networks:
       - mynetwork
 
@@ -22,9 +24,11 @@ services:
     restart: always
     environment:
       MYSQL_DATABASE: liveTelemetry_db
-      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: SkillIssue!2023
       MYSQL_USER: admin
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_PASSWORD: SkillIssue!2023
+    expose:
+      - "3306"
     ports:
       - "3306:3306"
     networks:
@@ -36,7 +40,7 @@ services:
     environment:
       PMA_HOST: mysql
       PMA_PORT: 3306
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_PASSWORD: SkillIssue!2023
     ports:
       - "8080:80"
     networks:
@@ -44,3 +48,4 @@ services:
 
 networks:
   mynetwork:
+    driver: bridge

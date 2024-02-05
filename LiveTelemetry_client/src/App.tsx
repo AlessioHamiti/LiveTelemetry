@@ -1,11 +1,4 @@
-import './App.css';
-import { ThemeProvider } from '@mui/material/styles';
-import { createCustomTheme } from './components/MUITheme';
-import LoginPage from './pages/LoginPage';
-import { BrowserRouter } from 'react-router-dom';
-import {Route, Routes} from 'react-router-dom';
-import NormalUserLayout from "./layouts/NormalUserLayout";
-import BatteryPage from "./components/BatteryPage";
+import './App.css'; import { ThemeProvider } from '@mui/material/styles'; import { createCustomTheme } from './components/MUITheme'; import LoginPage from './pages/LoginPage'; import { BrowserRouter } from 'react-router-dom'; import {Route, Routes} from 'react-router-dom'; import NormalUserLayout from "./layouts/NormalUserLayout"; import BatteryPage from "./components/BatteryPage";
 import VCUpage from "./components/VCUpage";
 import DeveloperPage from "./components/DeveloperPage";
 import SearchPage from "./pages/SearchPage";
